@@ -26,6 +26,7 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using NET45Backports;
 
 namespace Graph
 {
@@ -396,8 +397,7 @@ namespace Graph
 						connection.bounds = path.GetBounds();
 					}
 
-					if (showLabels &&
-						!string.IsNullOrWhiteSpace(connection.Name))
+					if (showLabels && !StringExtensions.IsNullOrWhiteSpace(connection.Name))
 					{
 						var center = new PointF(centerX, centerY);
 						RenderLabel(graphics, connection, center, connection.state);

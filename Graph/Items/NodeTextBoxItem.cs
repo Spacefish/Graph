@@ -27,6 +27,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
 using System.ComponentModel;
+using NET45Backports;
 
 namespace Graph.Items
 {
@@ -101,7 +102,7 @@ namespace Graph.Items
 
 		public override SizeF Measure(Graphics graphics)
 		{
-			if (!string.IsNullOrWhiteSpace(this.Text))
+			if (!StringExtensions.IsNullOrWhiteSpace(this.Text))
 			{
 				if (this.TextSize.IsEmpty)
 				{

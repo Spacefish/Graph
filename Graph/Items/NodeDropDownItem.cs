@@ -27,6 +27,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
 using System.ComponentModel;
+using NET45Backports;
 
 namespace Graph.Items
 {
@@ -109,7 +110,7 @@ namespace Graph.Items
 			if (Items != null &&
 				SelectedIndex >= 0 && SelectedIndex < Items.Length)
 				text = Items[SelectedIndex];
-			if (!string.IsNullOrWhiteSpace(text))
+			if (!StringExtensions.IsNullOrWhiteSpace(text))
 			{
 				if (this.TextSize.IsEmpty)
 				{
